@@ -250,7 +250,7 @@ app.post('/saveteam', authMiddleware, (req, res) => {
 app.get('/getcontests/:matchId', (req, res) => {
   const matchContests = contests.filter(c => c.matchId === req.params.matchId);
   return res.json({ contests: matchContests });
-}
+});
 
 // Get a specific contest
 app.get('/getcontest/:contestId', (req, res) => {
@@ -259,7 +259,7 @@ app.get('/getcontest/:contestId', (req, res) => {
     return res.status(404).json({ message: 'Contest not found' });
   }
   return res.json({ contest });
-}
+});
 
 // Get teams of a contest (for leaderboard)
 app.get('/getteamsofcontest/:contestId', (req, res) => {
